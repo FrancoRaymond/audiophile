@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from 'react'
+import { Link } from 'react-router-dom';
 import iconCart from '../assets/icon-cart.svg'
 import menu from '../assets/icon-menu.svg'
 import close from '../assets/icon-menu-close.svg'
@@ -19,24 +20,27 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize)
   },[])
 
+  const closeMenu = () => {
+    setMenuOpen(false)
+  }
 
   return (
     <div className='text-white relative bg-black flex justify-between items-center py-3 px-2 sm:px-5 md:px-10 lg:px-24'>
-      <a href='#' className='text-2xl font-bold'>audiophile</a>
-      <nav className={`${size < 640 ? menuOpen ? 'absolute block bg-black top-14 p-7 left-1/2 w-full -translate-x-[50%]' : 'hidden' : ''} `}>
+      <Link onClick={closeMenu} to="/" className="text-2xl font-bold">audiophile</Link>
+      <nav className={`${size < 640 ? menuOpen ? 'absolute block bg-black top-14 p-7 left-0 right-0 mx-auto max-w-[90%]' : 'hidden' : ''}`}>
         <ul className={`flex gap-8 ${size < 640 ? 'flex-col items-center' : 'flex-row'}`}>
-            <li><a href="/">HOME</a></li>
-            <li><a href="/headphones">HEADPHONES</a></li>
-            <li><a href="/speakers">SPEAKERS</a></li>
-            <li><a href="/earphones">EARPHONES</a></li>
+          <li><Link onClick={closeMenu} to="/">HOME</Link></li>
+          <li><Link onClick={closeMenu} to="/headphones">HEADPHONES</Link></li>
+          <li><Link onClick={closeMenu} to="/speakers">SPEAKERS</Link></li>
+          <li><Link onClick={closeMenu} to="/earphones">EARPHONES</Link></li>
         </ul>
       </nav>
       <div className='flex gap-5'>
-        <a href="/checkout"><img src={iconCart} alt="cart" /></a>
+        <Link onClick={closeMenu} to="/checkout"><img src={iconCart} alt="cart" /></Link>
         <img src={menu} alt="menu" onClick={() => setMenuOpen(true)} className={`${menuOpen ? 'hidden' : ''} size-6 cursor-pointer ${size > 640 ? 'hidden' : ''}`}/>
         <img src={close} alt="close" onClick={() => setMenuOpen(false)} className={`${menuOpen ? 'block' : 'hidden'} size-6 cursor-pointer ${size > 640 ? 'hidden' : ''}`}/>
       </div>
-    </div> 
+    </div>
   )
 }
 
