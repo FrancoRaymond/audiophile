@@ -1,12 +1,14 @@
 import React,{useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
+import { useAppContext } from '../context/context';
 import iconCart from '../assets/icon-cart.svg'
 import menu from '../assets/icon-menu.svg'
 import close from '../assets/icon-menu-close.svg'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [size, setSize] = useState(window.innerWidth)
+  const {size, setSize} = useAppContext()
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,7 +27,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='text-white w-full bg-black flex justify-between items-center py-3 px-2 sm:px-5 md:px-10 lg:px-24 fixed top-0'>
+    <div className='text-white w-full border-b border-gray-400 bg-black flex justify-between items-center py-3 px-2 sm:px-5 md:px-10 lg:px-24 fixed top-0'>
       <Link onClick={closeMenu} to="/" className="text-2xl font-bold">audiophile</Link>
       <nav className={`${size < 640 ? menuOpen ? 'absolute block bg-black top-14 p-7 left-0 right-0 mx-auto max-w-[90%]' : 'hidden' : ''}`}>
         <ul className={`flex gap-8 ${size < 640 ? 'flex-col items-center' : 'flex-row'}`}>

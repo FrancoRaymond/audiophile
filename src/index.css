@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+.homeHeroSection{
+    background-image: url('../src/assets/images/mobile/image-header.jpg');
+
+}
+
+@media(min-width: 640px){
+    .homeHeroSection{
+        background-image: url('../src/assets/images/image-hero.jpg');
+    }
+}

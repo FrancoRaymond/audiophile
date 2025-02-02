@@ -3,6 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 const AppContext = createContext(); 
 
 const AppProvider = ({ children }) => {
+  const [size, setSize] = useState(window.innerWidth)
   const [cart, setCart] = useState([
     {
       id : 1,
@@ -25,7 +26,9 @@ const AppProvider = ({ children }) => {
       value={
         {
           cart, 
-          setCart
+          setCart,
+          size,
+          setSize
         }
       }
     >
