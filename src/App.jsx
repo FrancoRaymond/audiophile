@@ -7,6 +7,7 @@ import Headphones from './pages/Headphones'
 import Speakers from './pages/Speakers'
 import Earphones from './pages/Earphones'
 import Checkout from './pages/Checkout'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/earphones' element={<Earphones />}/>
         <Route path='/checkout' element={<Checkout />}/>
       </Routes>
+      <Footer />
     </AppProvider>   
   )
 }
