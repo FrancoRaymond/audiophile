@@ -10,3 +10,7 @@
         background-image: url('../src/assets/images/image-hero.jpg');
     }
 }
+
+.circlesDiv{
+    background-image: url('../src/assets/images/pattern-circles.svg');
+}
