@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAppContext } from '../context/context'
 
-const Cart = () => {
+const CheckoutCart = () => {
   const { cart } = useAppContext()
 
   const total = cart.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0)
@@ -50,4 +50,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default CheckoutCart

@@ -11,9 +11,7 @@ const Home = () => {
       <HeroSection />
       <Categories />
       <Products />
-      <Details />
-
-      
+      <Details />  
     </div> 
   )
 }

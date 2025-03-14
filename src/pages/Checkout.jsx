@@ -1,5 +1,5 @@
 import React,{ useState} from 'react'
-import Cart from '../components/Cart'
+import CheckoutCart from '../components/CheckoutCart'
 import BillingInfo from '../components/checkout-form/Billinginfo';
 import ShippingInfo from '../components/checkout-form/ShippingInfo';
 import PaymentInfo from '../components/checkout-form/PaymentInfo';
@@ -77,7 +77,7 @@ const Checkout = () => {
           <ShippingInfo formData={formData} errors={errors} handleChange={handleChange} />
           <PaymentInfo  formData={formData} errors={errors} handleChange={handleChange} />
         </div>
-        <Cart />
+        <CheckoutCart />
       </form>
     </div> 
   )
