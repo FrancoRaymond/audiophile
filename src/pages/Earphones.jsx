@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const Earphones = () => {
-  return (
-    <div className='text-black min-h-screen flex items-center justify-center text-3xl'>
-      EARPHONES PAGE
-    </div> 
-  )
-}
 
-export default Earphones
+  return (
+    <div className='min-h-screen py-24'>
+      
+    </div>
+  );
+};
+
+export default Earphones;

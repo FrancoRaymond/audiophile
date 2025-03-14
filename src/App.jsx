@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AppProvider from './context/context';
 import Navbar from './components/Navbar';
-import Landingpage from './pages/Landingpage';
 import Home from './pages/Home';
 import Headphones from './pages/Headphones';
 import Speakers from './pages/Speakers';
@@ -15,19 +14,18 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 3000); 
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer); 
   }, []);
 
   return (
     <AppProvider>
       <Navbar />
       {isLoading ? (
-        <Loading />
+        <Loading /> 
       ) : (
         <>
           <Routes>
@@ -36,10 +34,10 @@ function App() {
             <Route path='/speakers' element={<Speakers />} />
             <Route path='/earphones' element={<Earphones />} />
             <Route path='/checkout' element={<Checkout />} />
-          </Routes>
-          <Footer />
+          </Routes> 
         </>
       )}
+      <Footer />
     </AppProvider>
   );
 }

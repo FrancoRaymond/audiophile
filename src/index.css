@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
+*{
+    box-sizing: border-box;
+}
+body{
+    scroll-behavior: smooth;
+    max-width: 90rem;
+    margin: 0 auto;
+}
 .homeHeroSection{
     background-image: url('../src/assets/images/mobile/image-header.jpg');
-
 }
-
 @media(min-width: 640px){
     .homeHeroSection{
         background-image: url('../src/assets/images/image-hero.jpg');
     }
 }
-
 .circlesDiv{
     background-image: url('../src/assets/images/pattern-circles.svg');
 }

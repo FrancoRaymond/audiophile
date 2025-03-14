@@ -1,10 +1,19 @@
-import React from 'react'
+import React,{ useState } from 'react'
+//import { products } from '../data/products.json'
 
 const Speakers = () => {
+  //const [items, setItems] = useState(products.filter(items => items.category === "speakers"))
   return (
-    <div className='text-black min-h-screen flex items-center justify-center text-3xl'>
-      SPEAKERS PAGE
-    </div> 
+    <div className=' min-h-screen py-24'>
+      {/*
+        items.map(item => (
+          <div key={item.id}>
+            <image src={item.image.mobile} alt="" className='border-2 border-green-800 h-24 w-24'/>
+            <h1 className='text-red-700'>{item.name}</h1>
+          </div>
+        ))
+        */}
+    </div>
   )
 }
 
