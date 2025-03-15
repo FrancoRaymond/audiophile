@@ -12,7 +12,7 @@ import Loading from './components/Loading';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -37,7 +37,7 @@ function App() {
           </Routes> 
         </>
       )}
-      <Footer />
+      <Footer /> 
     </AppProvider>
   );
 }

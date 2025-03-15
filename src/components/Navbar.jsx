@@ -4,11 +4,11 @@ import { useAppContext } from '../context/context';
 import iconCart from '../assets/icon-cart.svg'
 import menu from '../assets/icon-menu.svg'
 import close from '../assets/icon-menu-close.svg'
+import Cart from './Cart';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const {size, setSize} = useAppContext()
-  
+  const { size, setSize, isCartActive, setIsCartActive} = useAppContext();
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,10 +38,11 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className='flex gap-5'>
-        <Link onClick={closeMenu} to="/checkout"><img src={iconCart} alt="cart" /></Link>
+        <button onClick={() => setIsCartActive(true)} className='cursor-pointer'><img src={iconCart} alt="cart" /></button>
         <img src={menu} alt="menu" onClick={() => setMenuOpen(true)} className={`${menuOpen ? 'hidden' : ''} size-6 cursor-pointer ${size > 640 ? 'hidden' : ''}`}/>
         <img src={close} alt="close" onClick={() => setMenuOpen(false)} className={`${menuOpen ? 'block' : 'hidden'} size-6 cursor-pointer ${size > 640 ? 'hidden' : ''}`}/>
       </div>
+       { isCartActive && <Cart /> }
     </div>
   )
 }

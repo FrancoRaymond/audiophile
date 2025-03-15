@@ -7,7 +7,7 @@ const Speakers = () => {
     <div className=' min-h-screen py-16 flex flex-col gap-10 px-2 sm:px-5 md:px-10 lg:px-24'>
       {
         items.map(item => (
-          <div key={item.id} className='md:grid md:grid-cols-2'>
+          <div key={item.id} className='md:grid md:grid-cols-2 md:gap-7'>
             <img src={item.image.mobile} alt="" className='mx-auto max-w-[500px] w-full'/>
             <div className='py-8 flex px-4 flex-col gap-3 items-center md:items-start md:gap-4 md:justify-center lg:px-10 lg:gap-6'>
               {item.new && <span className='text-[#d87c49] md:text-lg'>NEW PRODUCT</span>}
