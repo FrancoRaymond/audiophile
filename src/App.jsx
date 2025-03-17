@@ -9,6 +9,7 @@ import Earphones from './pages/Earphones';
 import Checkout from './pages/Checkout';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
+import ProductDetail from './components/productDetail/ProductDetails';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,6 +35,7 @@ function App() {
             <Route path='/speakers' element={<Speakers />} />
             <Route path='/earphones' element={<Earphones />} />
             <Route path='/checkout' element={<Checkout />} />
+            <Route path="/product/:productId" element={<ProductDetail />} /> {/* Dynamic route for product details */}
           </Routes> 
         </>
       )}

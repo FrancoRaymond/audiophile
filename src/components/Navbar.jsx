@@ -8,7 +8,9 @@ import Cart from './Cart';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const { size, setSize, isCartActive, setIsCartActive} = useAppContext();
+  const { size, setSize, isCartActive, setIsCartActive, cart} = useAppContext();
+  const cartQuantity = cart.reduce((acc, curr) => acc + curr.quantity, 0)
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,7 +40,10 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className='flex gap-5'>
-        <button onClick={() => setIsCartActive(true)} className='cursor-pointer'><img src={iconCart} alt="cart" /></button>
+        <button onClick={() => setIsCartActive(true)} className='cursor-pointer relative'>
+          <img src={iconCart} alt="cart" />
+          {cart.length === 0 ? '' : <span className='text-[10px] text-white absolute -top-2 bg-[#d87c49] z-20 p-0.5 px-1.5 ml-auto rounded-xl'>{cartQuantity}</span> }
+        </button>
         <img src={menu} alt="menu" onClick={() => setMenuOpen(true)} className={`${menuOpen ? 'hidden' : ''} size-6 cursor-pointer ${size > 640 ? 'hidden' : ''}`}/>
         <img src={close} alt="close" onClick={() => setMenuOpen(false)} className={`${menuOpen ? 'block' : 'hidden'} size-6 cursor-pointer ${size > 640 ? 'hidden' : ''}`}/>
       </div>
