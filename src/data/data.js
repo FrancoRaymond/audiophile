@@ -14,6 +14,10 @@ import galleryThirdMobile from "../assets/images/product-yx1-earphones/mobile/im
 import galleryThirdTablet from "../assets/images/product-yx1-earphones/tablet/image-gallery-3.jpg";
 import galleryThirdDesktop from "../assets/images/product-yx1-earphones/desktop/image-gallery-3.jpg";
 
+import xx99MarkOneMobile from "../assets/images/product-xx99-mark-one-headphones/mobile/image-product.jpg";
+import xx59Mobile from "../assets/images/product-xx59-headphones/mobile/image-product.jpg";
+import zx9Mobile from "../assets/images/product-zx9-speaker/mobile/image-product.jpg";
+
 //  PRODUCT NUMBER 2 (ID 2)
 
 import mobileImage from "../assets/images/product-xx59-headphones/mobile/image-product.jpg";
@@ -31,6 +35,11 @@ import galleryDesktop2 from "../assets/images/product-xx59-headphones/desktop/im
 import galleryMobile3 from "../assets/images/product-xx59-headphones/mobile/image-gallery-3.jpg";
 import galleryTablet3 from "../assets/images/product-xx59-headphones/tablet/image-gallery-3.jpg";
 import galleryDesktop3 from "../assets/images/product-xx59-headphones/desktop/image-gallery-3.jpg";
+
+import xx99MarkTwoMobile2 from "../assets/images/product-xx99-mark-two-headphones/mobile/image-product.jpg";
+import xx99MarkOneMobile2 from "../assets/images/product-xx99-mark-one-headphones/mobile/image-product.jpg";
+import zx9SpeakerMobile2 from "../assets/images/product-zx9-speaker/mobile/image-product.jpg";
+
 
 // PRODUCT NUMBER 3 (ID - 3)
 
@@ -50,6 +59,11 @@ import galleryImage3Mobile from '../assets/images/product-xx99-mark-one-headphon
 import galleryImage3Tablet from '../assets/images/product-xx99-mark-one-headphones/tablet/image-gallery-3.jpg';
 import galleryImage3Desktop from '../assets/images/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg';
 
+import xx99MarkTwoMobile3 from '../assets/images/product-xx99-mark-two-headphones/mobile/image-product.jpg';
+import xx59Mobile3 from '../assets/images/product-xx59-headphones/mobile/image-product.jpg';
+import zx9SpeakerMobile3 from '../assets/images/product-zx9-speaker/mobile/image-product.jpg';
+
+
 // PRODUCT NUMBER 4 (ID - 4)
 
 import productMobile4 from '../assets/images/product-xx99-mark-two-headphones/mobile/image-product.jpg';
@@ -67,6 +81,11 @@ import gallerySecondDesktop4 from '../assets/images/product-xx99-mark-two-headph
 import galleryThirdMobile4 from '../assets/images/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg';
 import galleryThirdTablet4 from '../assets/images/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg';
 import galleryThirdDesktop4 from '../assets/images/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg';
+
+import xx99MarkOneMobile4 from '../assets/images/product-xx99-mark-one-headphones/mobile/image-product.jpg';
+import xx59Mobile4 from '../assets/images/product-xx59-headphones/mobile/image-product.jpg';
+import zx9Mobile4 from '../assets/images/product-zx9-speaker/mobile/image-product.jpg';
+
 
 // PRODUCT NUMBER 5 (ID - 5)
 
@@ -86,6 +105,11 @@ import galleryThirdMobile5 from "../assets/images/product-zx7-speaker/mobile/ima
 import galleryThirdTablet5 from "../assets/images/product-zx7-speaker/tablet/image-gallery-3.jpg";
 import galleryThirdDesktop5 from "../assets/images/product-zx7-speaker/desktop/image-gallery-3.jpg";
 
+import zx9Mobile5 from "../assets/images/product-zx9-speaker/mobile/image-product.jpg";
+import xx99MarkOneMobile5 from "../assets/images/product-xx99-mark-one-headphones/mobile/image-product.jpg";
+import xx59Mobile5 from "../assets/images/product-xx59-headphones/mobile/image-product.jpg";
+
+
 // PRODUCT NUMBER 6 (ID - 6)
 
 import productImageMobile6 from "../assets/images/product-zx9-speaker/mobile/image-product.jpg";
@@ -103,6 +127,11 @@ import galleryImage2Desktop6 from "../assets/images/product-zx9-speaker/desktop/
 import galleryImage3Mobile6 from "../assets/images/product-zx9-speaker/mobile/image-gallery-3.jpg";
 import galleryImage3Tablet6 from "../assets/images/product-zx9-speaker/tablet/image-gallery-3.jpg";
 import galleryImage3Desktop6 from "../assets/images/product-zx9-speaker/desktop/image-gallery-3.jpg";
+
+import zx7Mobile6 from "../assets/images/product-zx7-speaker/mobile/image-product.jpg";
+import xx99MarkOneMobile6 from "../assets/images/product-xx99-mark-one-headphones/mobile/image-product.jpg";
+import xx59Mobile6 from "../assets/images/product-xx59-headphones/mobile/image-product.jpg";
+
 
 
 export const products = [
@@ -158,7 +187,30 @@ export const products = [
         tablet: galleryThirdTablet,
         desktop: galleryThirdDesktop,
       },
-    }
+    },
+    others: [
+      {
+        slug: "xx99-mark-one-headphones",
+        name: "XX99 Mark I",
+        image: {
+          mobile: xx99MarkOneMobile
+        },
+      },
+      {
+        slug: "xx59-headphones",
+        name: "XX59",
+        image: {
+          mobile: xx59Mobile
+        },
+      },
+      {
+        slug: "zx9-speaker",
+        name: "ZX9 Speaker",
+        image: {
+          mobile: zx9Mobile
+        },
+      },
+    ]
   },
   {
     id: 2,
@@ -198,7 +250,30 @@ export const products = [
         tablet: galleryTablet3,
         desktop: galleryDesktop3,
       },
-    }
+    },
+    others: [
+      {
+        slug: "xx99-mark-two-headphones",
+        name: "XX99 Mark II",
+        image: {
+          mobile: xx99MarkTwoMobile2
+        },
+      },
+      {
+        slug: "xx99-mark-one-headphones",
+        name: "XX99 Mark I",
+        image: {
+          mobile: xx99MarkOneMobile2
+        },
+      },
+      {
+        slug: "zx9-speaker",
+        name: "ZX9 Speaker",
+        image: {
+          mobile: zx9SpeakerMobile2
+        },
+      },
+    ]
   },
   {
     id: 3,
@@ -238,7 +313,30 @@ export const products = [
         tablet: galleryImage3Tablet,
         desktop: galleryImage3Desktop,
       },
-    }
+    },
+    others: [
+      {
+        slug: "xx99-mark-two-headphones",
+        name: "XX99 Mark II",
+        image: {
+          mobile: xx99MarkTwoMobile3
+        },
+      },
+      {
+        slug: "xx59-headphones",
+        name: "XX59",
+        image: {
+          mobile: xx59Mobile3
+        },
+      },
+      {
+        slug: "zx9-speaker",
+        name: "ZX9 Speaker",
+        image: {
+          mobile: zx9SpeakerMobile3
+        },
+      },
+    ]
   },
   {
     id: 4,
@@ -279,7 +377,30 @@ export const products = [
         tablet: galleryThirdTablet4,
         desktop: galleryThirdDesktop4,
       }
-    }
+    },
+    others: [
+      {
+        slug: "xx99-mark-one-headphones",
+        name: "XX99 Mark I",
+        image: {
+          mobile: xx99MarkOneMobile4
+        },
+      },
+      {
+        slug: "xx59-headphones",
+        name: "XX59",
+        image: {
+          mobile: xx59Mobile4
+        },
+      },
+      {
+        slug: "zx9-speaker",
+        name: "ZX9 Speaker",
+        image: {
+          mobile: zx9Mobile4
+        },
+      },
+    ]
   },
   {
     id: 5,
@@ -318,7 +439,30 @@ export const products = [
         tablet: galleryThirdTablet5,
         desktop: galleryThirdDesktop5
       }
-    }
+    },
+    others: [
+      {
+        slug: "zx9-speaker",
+        name: "ZX9 Speaker",
+        image: {
+          mobile: zx9Mobile5
+        }
+      },
+      {
+        slug: "xx99-mark-one-headphones",
+        name: "XX99 Mark I",
+        image: {
+          mobile: xx99MarkOneMobile5
+        }
+      },
+      {
+        slug: "xx59-headphones",
+        name: "XX59",
+        image: {
+          mobile: xx59Mobile5
+        }
+      }
+    ]
   },
   {
     id: 6,
@@ -359,7 +503,30 @@ export const products = [
         tablet: galleryImage3Tablet6,
         desktop: galleryImage3Desktop6
       }
-    }
+    },
+    others: [
+      {
+        slug: "zx7-speaker",
+        name: "ZX7 Speaker",
+        image: {
+          mobile: zx7Mobile6
+        }
+      },
+      {
+        slug: "xx99-mark-one-headphones",
+        name: "XX99 Mark I",
+        image: {
+          mobile: xx99MarkOneMobile6
+        }
+      },
+      {
+        slug: "xx59-headphones",
+        name: "XX59",
+        image: {
+          mobile: xx59Mobile6
+        }
+      }
+    ]
   }
 ]
 

@@ -35,7 +35,7 @@ function App() {
             <Route path='/speakers' element={<Speakers />} />
             <Route path='/earphones' element={<Earphones />} />
             <Route path='/checkout' element={<Checkout />} />
-            <Route path="/product/:productId" element={<ProductDetail />} /> {/* Dynamic route for product details */}
+            <Route path="/product/:productSlug" element={<ProductDetail />} />
           </Routes> 
         </>
       )}

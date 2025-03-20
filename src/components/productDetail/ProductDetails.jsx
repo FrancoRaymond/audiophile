@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams} from 'react-router-dom';
-import { products } from '../../data/data.js';  // Import the products data
+import { products } from '../../data/data.js';  
 import Features from './Features.jsx';
 import Gallery from './Gallery.jsx';
 import Categories from '../homepage/Categories.jsx';
+import Others from './Others.jsx';
+import Details from '../homepage/Details.jsx';
 
 function ProductDetail() {
   const navigate = useNavigate();
-  const { productId } = useParams(); // Get productId from the URL
+  const { productSlug } = useParams(); 
+  const [product, setProduct] = useState(products.filter(item => item.slug === productSlug))
 
-  // Find the product from the products array based on the productId
-  const [product, setProduct] = useState(products.filter(item => item.id === parseInt(productId) ))
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);  
 
   return (
     <div className="product-detail mt-14 px-2 sm:px-5 md:px-10 lg:px-24">
@@ -41,7 +44,9 @@ function ProductDetail() {
       }
       <Features product={product} /> 
       <Gallery product={product} />
+      <Others product={product} />
       <Categories />
+      <Details />
     </div>
   );
 }

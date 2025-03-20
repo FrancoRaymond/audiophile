@@ -8,7 +8,7 @@ import speakers from '../../assets/shared/image-speakers.png'
 const Categories = () => {
 
   return (
-    <div className='flex py-24 flex-col gap-22 px-2 sm:px-5 md:px-10 lg:px-24 sm:flex-row sm:gap-10 sm:py-32'>
+    <div className='flex py-8 mt-20 sm:mt-8 flex-col gap-22 sm:flex-row sm:gap-10 sm:py-32'>
       <div className='relative pt-24 bg-gray-100 mx-auto w-full pb-5 mt-7 rounded-md'>
           <img src={headp} alt="" className='absolute w-52 -top-22 -translate-x-1/2 left-1/2'/>
           <h1 className='font-semibold text-center'>HEADPHONES</h1>
