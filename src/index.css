@@ -22,3 +22,9 @@ body{
 .cart{
     background-color: rgba(0, 0, 0, 0.5);
 }
+.activeMenu{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.activeMenu ul{
+    @apply bg-black py-8
+}

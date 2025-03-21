@@ -14,6 +14,7 @@ const Products = () => {
 
     const handleNavigation = (productSlug) => {
         navigate(`/product/${productSlug}`);
+        console.log(productSlug)
     };
 
   return (

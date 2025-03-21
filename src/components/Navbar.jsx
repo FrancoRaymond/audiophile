@@ -27,12 +27,15 @@ const Navbar = () => {
   const closeMenu = () => {
     setMenuOpen(false)
   }
+  useEffect(() => {
+    menuOpen ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto'
+  }, [menuOpen])
 
   return (
     <div className='text-white w-full border-b border-gray-400 bg-black z-50 flex justify-between items-center py-3 px-2 sm:px-5 md:px-10 lg:px-24 fixed top-0'>
       <Link onClick={closeMenu} to="/" className="text-2xl font-bold">audiophile</Link>
-      <nav className={`${size < 640 ? menuOpen ? 'absolute block bg-black top-14 p-7 left-0 right-0 mx-auto max-w-[90%]' : 'hidden' : ''}`}>
-        <ul className={`flex gap-8 ${size < 640 ? 'flex-col items-center' : 'flex-row'}`}>
+      <nav className={`${size < 640 ? menuOpen ? 'activeMenu absolute block top-14 h-screen left-0 right-0 mx-auto w-full' : 'hidden' : ''}`}>
+        <ul className={`flex gap-8 ${size < 640 ? 'flex-col items-center h-fit w-full' : 'flex-row'}`}>
           <li><Link onClick={closeMenu} to="/">HOME</Link></li>
           <li><Link onClick={closeMenu} to="/headphones">HEADPHONES</Link></li>
           <li><Link onClick={closeMenu} to="/speakers">SPEAKERS</Link></li>

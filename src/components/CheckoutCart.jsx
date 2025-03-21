@@ -15,7 +15,7 @@ const CheckoutCart = () => {
           {
             cart.map(item => (
               <div key={item.id} className='flex gap-4 items-center justify-between'>
-                <div className={`h-12 w-12 ${item.image} rounded-md`}></div>
+                <img src={item.image.mobile} alt="" className='h-12 w-12 rounded-md'/>
                 <div className='grow'>
                   <h1 className='font-semibold'>{item.name}</h1>
                   <h2 className='text-gray-400 font-medium'>R{item.price}</h2>
