@@ -7,6 +7,8 @@ const AppProvider = ({ children }) => {
   const [isCartActive, setIsCartActive] = useState(false)
   const [cart, setCart] = useState([])
 
+  const formatCurrency = (amount) => new Intl.NumberFormat('en-ZA', { style: 'currency', currency: 'ZAR' }).format(amount);
+
   const addToCart = (product, qty) => {
     setCart((prevCart) => {
       const existingProduct = prevCart.find(item => item.id === product.id);
@@ -33,7 +35,7 @@ const AppProvider = ({ children }) => {
     if (e.target.id === "decrement") {
       setCart(cart
         .map(item => 
-            item.id === productId ? { ...item, quantity: item.quantity - 1 } : item
+          item.id === productId ? { ...item, quantity: item.quantity - 1 } : item
         )
         .filter(item => item.quantity > 0) 
       );
@@ -51,7 +53,8 @@ const AppProvider = ({ children }) => {
           isCartActive, 
           setIsCartActive, 
           addToCart,
-          quantityAdjustment
+          quantityAdjustment,
+          formatCurrency
         }
       }
     >

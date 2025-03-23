@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../context/context'
 import close from '../assets/icon-close.svg'
 
 
 const Cart = () => {
-    const { cart, setCart, setIsCartActive, quantityAdjustment} = useAppContext()
+    const { cart, setCart, setIsCartActive, quantityAdjustment, formatCurrency} = useAppContext()
     const total = cart.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0)
     const cartQuantity = cart.reduce((acc, curr) => acc + curr.quantity, 0)
 
@@ -30,7 +30,7 @@ const Cart = () => {
                             <img src={item.image.mobile} alt="" className="h-12 w-12 rounded-md"/>
                             <div className='grow'>
                                 <h1 className='font-semibold text-black'>{item.slug}</h1>
-                                <h2 className=' font-medium text-gray-400'>R{item.price}</h2>
+                                <h2 className=' font-medium text-gray-400'>{formatCurrency(item.price)}</h2>
                             </div>
                             <div className='flex gap-4 bg-gray-200 items-center px-3 py-1'>
                                 <button onClick={(e) => quantityAdjustment(e, item.id)} id='decrement' className='text-gray-600 border-0 cursor-pointer font-bold'>-</button>
@@ -42,7 +42,7 @@ const Cart = () => {
                     }
                     <div className='flex justify-between items-center mt-5 font-medium'>
                         <span className='text-gray-400'>TOTAL</span>
-                        <span className='font-semibold text-black'>R{total}</span>
+                        <span className='font-semibold text-black'>{formatCurrency(total)}</span>
                     </div>
                     <Link to="/checkout"><button onClick={() => setIsCartActive(false)} type='submit' className='text-white bg-[#d87c49] w-full mt-7 text-center p-2 font-semibold cursor-pointer'>CHECKOUT</button></Link>
                 </div>

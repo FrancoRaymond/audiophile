@@ -11,13 +11,17 @@ import { useAppContext } from '../../context/context.jsx';
 function ProductDetail() {
   const navigate = useNavigate();
   const { productSlug } = useParams(); 
-  const [product, setProduct] = useState(products.filter(item => item.slug === productSlug))
-  const { addToCart  } = useAppContext()
+  const [product, setProduct] = useState([])
+  const { addToCart, formatCurrency  } = useAppContext()
   const [qtyCounter, setQtyCounter] = useState(1)
 
   useEffect(() => {
+    const selectedProduct = products.find(item => item.slug === productSlug);
+    if (selectedProduct) {
+      setProduct([selectedProduct]);
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);  
+  }, [productSlug]); 
 
   const handleQuantityAdujstment = (e) => {
     if(e.target.id === 'increment'){
@@ -41,7 +45,7 @@ function ProductDetail() {
               {item.new && <span className='text-[#d87c49] md:text-lg'>NEW PRODUCT</span>}
                 <h1 className='text-xl font-semibold md:text-3xl max-w-80'>{item.name}</h1>
                 <p className='text-gray-500 text-center max-w-[500px] md:text-left'>{item.description}</p> 
-                <span className='font-semibold text-black text-lg'>R{item.price}</span> 
+                <span className='font-semibold text-black text-lg'>{formatCurrency(item.price)}</span> 
                 <div className='flex gap-5 items-center'>
                     <div className='flex gap-8 bg-gray-200 items-center px-3 h-fit py-2'>
                         <button 

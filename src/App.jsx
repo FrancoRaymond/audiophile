@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import AppProvider from './context/context';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -35,6 +35,7 @@ function App() {
           <Route path='/earphones' element={<Earphones />} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path="/product/:productSlug" element={<ProductDetail />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>  
       )}
       <Footer /> 
