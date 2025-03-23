@@ -1,10 +1,12 @@
 import React,{ useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import CheckoutCart from '../components/CheckoutCart'
 import BillingInfo from '../components/checkout-form/Billinginfo';
 import ShippingInfo from '../components/checkout-form/ShippingInfo';
 import PaymentInfo from '../components/checkout-form/PaymentInfo';
 
 const Checkout = () => {
+  const navigate = useNavigate();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const [noEmptyFields, setNoEmptyFields] = useState(false);
   const [formData, setFormData] = useState({
@@ -66,7 +68,7 @@ const Checkout = () => {
 
   return (
     <div className='text-black min-h-screen bg-gray-100 px-2 sm:px-5 md:px-10 lg:px-24 py-20'>
-      <h1 className='text-gray-400 font-semibold text-lg cursor-pointer'>Go Back</h1>
+      <button onClick={() => navigate(-1)} className='text-gray-400 font-semibold text-lg cursor-pointer'>Go Back</button>
       <form 
         onSubmit={handleSubmit}
         className=' flex flex-col gap-5 mt-5 md:flex-row md:justify-between place-items-start'
