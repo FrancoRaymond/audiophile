@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../context/context'
 import close from '../assets/icon-close.svg'
@@ -10,7 +11,13 @@ const Cart = () => {
     const cartQuantity = cart.reduce((acc, curr) => acc + curr.quantity, 0)
 
   return (
-    <div className="cart fixed flex top-0 left-0 z-50 w-full min-h-screen px-2 sm:px-5 md:px-10 lg:px-24">
+    <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0, opacity: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="cart fixed flex top-0 left-0 z-50 w-full min-h-screen px-2 sm:px-5 md:px-10 lg:px-24"
+        >
         <div className='max-w-sm h-fit max-h-[500px] overflow-y-auto bg-white w-full p-5 ml-auto mt-14 rounded-sm flex flex-col'>
             <button onClick={() => setIsCartActive(false)} className='border-0 ml-auto mb-3 cursor-pointer'><img src={close} alt="" /></button>
             {
@@ -27,7 +34,7 @@ const Cart = () => {
                     {
                         cart.map(item => (
                         <div key={item.id} className='flex gap-4 items-center justify-between mt-2'>
-                            <img src={item.image.mobile} alt="" className="h-12 w-12 rounded-md"/>
+                            <img src={item.image.mobile} alt="" className="h-14 w-14 rounded-md"/>
                             <div className='grow'>
                                 <h1 className='font-semibold text-black'>{item.slug}</h1>
                                 <h2 className=' font-medium text-gray-400'>{formatCurrency(item.price)}</h2>
@@ -48,7 +55,7 @@ const Cart = () => {
                 </div>
             }
         </div>
-    </div>
+    </motion.div>
   )
 }
 

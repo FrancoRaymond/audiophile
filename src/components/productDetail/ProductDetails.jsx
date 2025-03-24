@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion'
 import { useNavigate, useParams} from 'react-router-dom';
 import { products } from '../../data/data.js';  
 import Features from './Features.jsx';
@@ -7,6 +8,7 @@ import Categories from '../homepage/Categories.jsx';
 import Others from './Others.jsx';
 import Details from '../homepage/Details.jsx';
 import { useAppContext } from '../../context/context.jsx';
+import ScrollTop from '../ScrollTop.jsx';
 
 function ProductDetail() {
   const navigate = useNavigate();
@@ -19,8 +21,7 @@ function ProductDetail() {
     const selectedProduct = products.find(item => item.slug === productSlug);
     if (selectedProduct) {
       setProduct([selectedProduct]);
-    }
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    } 
   }, [productSlug]); 
 
   const handleQuantityAdujstment = (e) => {
@@ -33,7 +34,13 @@ function ProductDetail() {
   }
 
   return (
-    <div className="product-detail mt-14 px-2 sm:px-5 md:px-10 lg:px-24">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.9 }}  
+      className="product-detail mt-14 px-2 sm:px-5 md:px-10 lg:px-24"
+    >
+      <ScrollTop />
       <button onClick={() => navigate(-1)} className='cursor-pointer my-7 text-gray-400 font-semibold text-lg'>
         Back
       </button>
@@ -73,7 +80,7 @@ function ProductDetail() {
       <Others product={product} />
       <Categories />
       <Details />
-    </div>
+    </motion.div>
   );
 }
 

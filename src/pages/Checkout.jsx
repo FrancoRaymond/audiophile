@@ -1,5 +1,7 @@
 import React,{ useState} from 'react'
+import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom';
+import { useAppContext } from '../context/context';
 import CheckoutCart from '../components/CheckoutCart'
 import BillingInfo from '../components/checkout-form/Billinginfo';
 import ShippingInfo from '../components/checkout-form/ShippingInfo';
@@ -7,6 +9,7 @@ import PaymentInfo from '../components/checkout-form/PaymentInfo';
 
 const Checkout = () => {
   const navigate = useNavigate();
+  const { setCart } = useAppContext()
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const [noEmptyFields, setNoEmptyFields] = useState(false);
   const [formData, setFormData] = useState({
@@ -62,12 +65,31 @@ const Checkout = () => {
 
     if (Object.keys(formErrors).length === 0) {
       setNoEmptyFields(true);
-      console.log("Form submitted successfully", formData);
+      alert('order submitted succesfully')
+      setCart([])
+      setFormData({
+        name: "",
+        email: "",
+        phoneNumber: "",
+        address: "",
+        zipCode: "",
+        city: "",
+        country: "",
+        paymentMethod: "",
+        eMoneyNumber: "",
+        eMoneyPin: ""
+      })
     }
+    navigate(-1)
   };
 
   return (
-    <div className='text-black min-h-screen bg-gray-100 px-2 sm:px-5 md:px-10 lg:px-24 py-20'>
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.9 }}  
+      className='text-black min-h-screen bg-gray-100 px-2 sm:px-5 md:px-10 lg:px-24 py-20'
+    >
       <button onClick={() => navigate(-1)} className='text-gray-400 font-semibold text-lg cursor-pointer'>Go Back</button>
       <form 
         onSubmit={handleSubmit}
@@ -81,8 +103,8 @@ const Checkout = () => {
         </div>
         <CheckoutCart />
       </form>
-    </div> 
+    </motion.div> 
   )
 }
 
-export default Checkout
+export default Checkout;

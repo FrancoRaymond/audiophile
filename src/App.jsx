@@ -10,6 +10,7 @@ import Checkout from './pages/Checkout';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
 import ProductDetail from './components/productDetail/ProductDetails';
+import ScrollTop from './components/ScrollTop';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,15 +29,18 @@ function App() {
       {isLoading ? (
         <Loading /> 
       ) : ( 
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/headphones' element={<Headphones />} />
-          <Route path='/speakers' element={<Speakers />} />
-          <Route path='/earphones' element={<Earphones />} />
-          <Route path='/checkout' element={<Checkout />} />
-          <Route path="/product/:productSlug" element={<ProductDetail />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>  
+        <>
+          <ScrollTop />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/headphones' element={<Headphones />} />
+            <Route path='/speakers' element={<Speakers />} />
+            <Route path='/earphones' element={<Earphones />} />
+            <Route path='/checkout' element={<Checkout />} />
+            <Route path="/product/:productSlug" element={<ProductDetail />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes> 
+        </> 
       )}
       <Footer /> 
     </AppProvider>

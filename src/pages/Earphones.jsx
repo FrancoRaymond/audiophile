@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion'
 import { products } from '../data/data.js'
 import { Link } from 'react-router-dom';
 
 const Earphones = ({ product }) => {
-  const [items, setItems] = useState(products.filter(items => items.category === "earphones"))
-
+  const [items, setItems] = useState(products.filter(items => items.category === "earphones"));
 
   return (
     <div className='pt-14'>
@@ -12,7 +12,13 @@ const Earphones = ({ product }) => {
       <div className=' min-h-screen py-14 flex flex-col gap-10 px-2 sm:px-5 md:px-10 lg:px-24'>
         {
           items.map((item,index) => (
-            <div key={item.id} className={` items-center ${ index % 2 !== 0 ? 'md:flex md:flex-row-reverse' : 'md:grid md:grid-cols-2 md:gap-7' }`}>
+            <motion.div 
+              key={item.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.9 }}  
+              className={` items-center ${ index % 2 !== 0 ? 'evenItem md:flex md:flex-row-reverse' : 'md:grid md:grid-cols-2 md:gap-7' }`}
+            >
               <img src={item.image.mobile} alt="" className='mx-auto max-w-[500px] w-full'/>
               <div className='py-8 flex px-4 flex-col gap-3 items-center md:items-start md:gap-4 md:justify-center lg:px-10 lg:gap-6'>
                 {item.new && <span className='text-[#d87c49] md:text-lg'>NEW PRODUCT</span>}
@@ -22,7 +28,7 @@ const Earphones = ({ product }) => {
                 <button  className='text-white bg-[#d87c49] w-fit font-semibold mt-2 px-8 py-2 cursor-pointer'>SEE PRODUCT</button>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))
         }
       </div> 
