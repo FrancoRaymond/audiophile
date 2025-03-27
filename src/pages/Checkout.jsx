@@ -79,8 +79,8 @@ const Checkout = () => {
         eMoneyNumber: "",
         eMoneyPin: ""
       })
+      navigate('/')
     }
-    navigate(-1)
   };
 
   return (
