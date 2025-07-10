@@ -19,7 +19,7 @@ const Earphones = ({ product }) => {
               transition={{ duration: 0.9 }}  
               className={` items-center ${ index % 2 !== 0 ? 'evenItem md:flex md:flex-row-reverse' : 'md:grid md:grid-cols-2 md:gap-7' }`}
             >
-              <img src={item.image.mobile} alt="" className='mx-auto max-w-[500px] w-full'/>
+              <img src={item.image.mobile} alt="" loading="lazy" className='mx-auto max-w-[500px] w-full'/>
               <div className='py-8 flex px-4 flex-col gap-3 items-center md:items-start md:gap-4 md:justify-center lg:px-10 lg:gap-6'>
                 {item.new && <span className='text-[#d87c49] md:text-lg'>NEW PRODUCT</span>}
                 <h1 className='text-xl font-semibold md:text-3xl max-w-80'>{item.name}</h1>

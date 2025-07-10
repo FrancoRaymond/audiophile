@@ -4,7 +4,7 @@ import det from '../../assets/shared/image-best-gear.jpg'
 const Details = () => {
   return (
     <div className='flex flex-col gap-10 py-10 pb-20 text-center md:flex-row-reverse md:items-center md:justify-evenly'>
-        <img src={det} alt="" className='max-w-80 mx-auto md:mx-0 rounded-md md:max-w-96'/>
+        <img src={det} alt="" loading="lazy" className='max-w-80 mx-auto md:mx-0 rounded-md md:max-w-96'/>
         <div className='max-w-96 md:text-left mx-auto md:mx-0 md:max-w-lg'>
             <h1 className='text-black font-semibold text-3xl md:text-5xl'>BRINGING YOU THE <span className='text-[#d87c49]'>BEST</span> AUDIO GEAR</h1>
             <p className='text-gray-400 mt-10'>

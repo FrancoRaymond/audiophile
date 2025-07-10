@@ -22,7 +22,7 @@ const Products = () => {
             className='circlesDiv h-fit w-full py-10 md:flex-row bg-[#d87c49] bg-center bg-cover rounded-xl px-5 md:justify-evenly flex flex-col gap-7 items-center text-center'
             style={{ backgroundImage: `url(${img})`}}
         >
-            <img src={zx9} alt="" className='max-w-40 md:max-w-56 md:mb-0'/>
+            <img src={zx9} alt="" loading="lazy" className='max-w-40 md:max-w-56 md:mb-0'/>
             <div className='max-w-80 flex flex-col gap-7 md:text-left'>
                 <h1 className='text-3xl md:text-4xl font-semibold text-white md:max-w-48'>ZX9 SPEAKER</h1>
                 <span className='text-gray-100'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</span>
@@ -34,7 +34,7 @@ const Products = () => {
             <button onClick={() => handleNavigation('zx7-speaker')}  className='text-black cursor-pointer border-2 border-black font-semibold py-2 px-7 w-fit'>SEE PRODUCT</button>
         </div>
         <div className='flex flex-col gap-5 sm:flex-row'>
-            <img src={size > 640 ? earphonesD : earphones} alt="" className='rounded-xl sm:w-1/2'/>
+            <img src={size > 640 ? earphonesD : earphones} alt="" loading="lazy" className='rounded-xl sm:w-1/2'/>
             <div className='bg-gray-100 py-10 flex flex-col gap-10 rounded-xl px-5 sm:w-1/2'>
                 <h1 className='text-2xl font-semibold'>YX1 EARPHONES</h1>
                 <button onClick={() => handleNavigation('yx1-earphones')} className='text-black cursor-pointer border-2 w-fit border-black font-semibold py-2 px-7'>SEE PRODUCT</button>

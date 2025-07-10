@@ -15,7 +15,7 @@ const Others = ({product}) => {
             {
                 product.map(item => item.others.map(other => (
                     <div key={other.slug} className='flex flex-col gap-4 items-center'>
-                        <img src={other.image.mobile} alt="" className='mx-auto max-w-[500px] w-full lg:mx-0'/>
+                        <img src={other.image.mobile} alt="" loading="lazy" className='mx-auto max-w-[500px] w-full lg:mx-0'/>
                         <h3 className='text-lg font-semibold'>{other.name}</h3>
                         <button onClick={() => handleNavigation(other.slug)} className='text-white bg-[#d87c49] w-fit font-semibold px-8 py-2 cursor-pointer'>SEE PRODUCT</button>  
                     </div>

@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import toast from 'react-hot-toast';
 
 const AppContext = createContext(); 
 
@@ -6,6 +7,7 @@ const AppProvider = ({ children }) => {
   const [size, setSize] = useState(window.innerWidth)
   const [isCartActive, setIsCartActive] = useState(false)
   const [cart, setCart] = useState([])
+  const [toastMessage, setToastMessage] = useState('PS5 added to cart');
 
   const formatCurrency = (amount) => new Intl.NumberFormat('en-ZA', { style: 'currency', currency: 'ZAR' }).format(amount);
 
@@ -22,14 +24,17 @@ const AppProvider = ({ children }) => {
         return [...prevCart, { ...product, quantity: qty }];
       }
     });
+
+    toast.success(`${product.name} added to cart`);
+  
   };
 
   const quantityAdjustment = (e, productId) => {
     if (e.target.id === "increment") {
-        setCart(cart.map(item =>
-            item.id === productId ? 
-            { ...item, quantity: item.quantity + 1 } : item
-        ));
+      setCart(cart.map(item =>
+        item.id === productId ? 
+        { ...item, quantity: item.quantity + 1 } : item
+      ));
     }
 
     if (e.target.id === "decrement") {
@@ -54,7 +59,9 @@ const AppProvider = ({ children }) => {
           setIsCartActive, 
           addToCart,
           quantityAdjustment,
-          formatCurrency
+          formatCurrency,
+          toastMessage,
+          setToastMessage
         }
       }
     >
